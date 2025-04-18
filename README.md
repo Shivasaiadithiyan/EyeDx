@@ -23,3 +23,7 @@ Run the model_test.py python script to get the model accuracy and
 the metrics like f1 score and recall for model evaluauation
 
 ------------------------------------------------------------------------
+
+The project report and presentation are also provided along this repository
+
+------------------------------------------------------------------------
