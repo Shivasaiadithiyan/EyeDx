@@ -1,0 +1,119 @@
+###
+POST http://localhost:5000/api/doctor/signup
+Content-Type: application/json
+
+{
+  "email": "rageeeisredarted@gmail.com",
+  "password": "secret123"
+}
+
+###
+POST http://localhost:5000/api/doctor/login
+Content-Type: application/json
+
+{
+  "loginKey": "26976302",
+  "password": "secret123"
+}
+
+###
+POST http://localhost:5000/api/patient/signup
+Content-Type: application/json
+
+{
+  "email": "itsjustssa@gmtuktuk.com",
+  "password": "patientpass"
+}
+
+
+###
+POST http://localhost:5000/api/patient/login
+Content-Type: application/json
+
+{
+  "loginKey": "12413863",
+  "password": "12345678"
+}
+
+###
+GET http://localhost:5000/api/doctor/patients
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbktleSI6IjI2OTc2MzAyIiwicm9sZSI6ImRvY3RvciIsImlhdCI6MTc0NDE0MDc3MiwiZXhwIjoxNzQ0NzQ1NTcyfQ.iXV6vVWk9tz5CtI0CKF11WbnpN0w7TUJfGdPL32lpsc
+
+
+###
+GET http://localhost:5000/api/doctor/patient/90338980/scans
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbktleSI6IjI2OTc2MzAyIiwicm9sZSI6ImRvY3RvciIsImlhdCI6MTc0NDE0MDc3MiwiZXhwIjoxNzQ0NzQ1NTcyfQ.iXV6vVWk9tz5CtI0CKF11WbnpN0w7TUJfGdPL32lpsc
+
+###
+http://localhost:5000/api/doctor/scan/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbktleSI6IjI2OTc2MzAyIiwicm9sZSI6ImRvY3RvciIsImlhdCI6MTc0NDE0MDc3MiwiZXhwIjoxNzQ0NzQ1NTcyfQ.iXV6vVWk9tz5CtI0CKF11WbnpN0w7TUJfGdPL32lpsc
+
+###
+PUT http://localhost:5000/api/doctor/scan/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbktleSI6IjI2OTc2MzAyIiwicm9sZSI6ImRvY3RvciIsImlhdCI6MTc0NDE0MDc3MiwiZXhwIjoxNzQ0NzQ1NTcyfQ.iXV6vVWk9tz5CtI0CKF11WbnpN0w7TUJfGdPL32lpsc
+Content-Type: application/json
+
+{
+  "diagnosis": "Drusen",
+  "prescription": "10 days sleep",
+  "status": "completed"
+}
+
+
+###
+GET http://localhost:5000/api/patient/scans
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbktleSI6IjI5Njk3MzU4Iiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDQxODk0NzgsImV4cCI6MTc0NDc5NDI3OH0.lUTKw1n3Tz1vZvwrRcfxDVp5VyhY4ojyNGFQ44MbmtM
+
+### Get Specific Scan by ID (Replace ID and TOKEN)
+GET http://localhost:5000/api/patient/scan/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbktleSI6IjI5Njk3MzU4Iiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDQxODk0NzgsImV4cCI6MTc0NDc5NDI3OH0.lUTKw1n3Tz1vZvwrRcfxDVp5VyhY4ojyNGFQ44MbmtM
+
+
+###
+POST http://localhost:5000/api/upload
+Content-Type: application/json
+
+{
+  "imgurl": "https://i.imgur.com/IkQpV2O.jpeg",
+  "doclogkey": "26976302",
+  "patlogkey": "29697358",
+  "classification": "CNV",
+  "diagnosis": "",
+  "prescription": "",
+  "status": "Pending"
+}
+
+###
+POST http://localhost:5000/api/patient/quickscan
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbktleSI6IjI5Njk3MzU4Iiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDQ2MTM4NjgsImV4cCI6MTc0NTIxODY2OH0.uzzlwx2Ck6wquAgLmY1L-hdFwTxmQ8wk1lNbSUsASoA
+Content-Type: application/json
+
+{
+  "imgurl": "https://i.imgur.com/QnVItwc.jpeg"
+}
+
+###
+# Get all classified quickscans for the logged-in patient
+GET http://localhost:5000/api/patient/quickscans 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbktleSI6IjI5Njk3MzU4Iiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDQ2MTM4NjgsImV4cCI6MTc0NTIxODY2OH0.uzzlwx2Ck6wquAgLmY1L-hdFwTxmQ8wk1lNbSUsASoA
+
+###
+# Get a specific quickscan by its ID
+GET http://localhost:5000/api/patient/quickscan/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbktleSI6IjI5Njk3MzU4Iiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDQ2MTM4NjgsImV4cCI6MTc0NTIxODY2OH0.uzzlwx2Ck6wquAgLmY1L-hdFwTxmQ8wk1lNbSUsASoA
+
+
+
+------------------------------------------------------
+
+### Get unclassified QuickScans (simulate Pi)
+GET http://localhost:5000/api/unclassified
+
+
+### Update QuickScan classification
+PATCH http://localhost:5000/api/quickscan/3
+Content-Type: application/json
+
+{
+  "classification": "CNV"
+}

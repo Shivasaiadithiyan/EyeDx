@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scan Detail</title>
+  <link rel="stylesheet" href="styles/scanDetail.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div id="patientName" class="patient-name">Patient: John Doe</div>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </header>
+
+  <main class="container">
+    <!-- Scan Image -->
+    <div class="left-panel">
+      <img id="scanImage" alt="Scan Image" />
+    </div>
+
+    <!-- Info and Form Section -->
+    <div class="right-panel">
+      <!-- View Mode -->
+      <div id="detailsView" class="details-box">
+        <p><strong>Classification:</strong> <span id="classification"></span></p>
+        <p><strong>Diagnosis:</strong> <span id="diagnosisView"></span></p>
+        <p><strong>Prescription:</strong> <span id="prescriptionView"></span></p>
+        <p><strong>Status:</strong> <span id="statusView"></span></p>
+      </div>
+
+      <!-- Edit Mode -->
+      <form id="fillForm" class="form-box" style="display: none;">
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" id="diagnosis" required />
+
+        <label for="prescription">Prescription:</label>
+        <input type="text" id="prescription" required />
+
+        <label for="status">Status:</label>
+        <select id="status" required>
+          <option value="">Select</option>
+          <option value="Pending">🟡 Pending</option>
+          <option value="Reviewed">🔵 Reviewed</option>
+          <option value="Approved">✅ Approved</option>
+        </select>
+
+        <button type="submit">Save</button>
+      </form>
+
+      <!-- Edit Button -->
+      <button id="editBtn" class="edit-btn">Edit</button>
+    </div>
+  </main>
+
+  <script src="script/scanDetail.js"></script>
+</body>
+</html>
